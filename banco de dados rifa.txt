@@ -1,0 +1,22 @@
+Create table USUARIOS(
+     id_usuario varchar(36) primary key,
+     email_usuario varchar(36) unique,
+     senha varchar (255),
+     nome_usuario varchar (255)		
+     )
+     ;
+
+ Create table RIFAS(
+     id_rifa int primary key auto_increment,
+     nome_rifa varchar(255),
+     foto_rifa varchar (255)
+     )
+     ;
+
+ Create table SORTEIOS(
+     id_rifa int,
+     id_usuario varchar(36),
+     FOREIGN KEY (id_usuario) REFERENCES USUARIOS (id_usuario),
+     FOREIGN KEY (id_rifa) REFERENCES RIFAS (id_rifa)
+     )
+     ;
